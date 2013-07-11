@@ -1,0 +1,101 @@
+﻿@model MvcFluentValidation.Models.FluentDataModel
+
+<h2>Validation Test for Standard MVC Validation</h2>
+
+@using (Html.BeginForm("Index", "Fluent"))
+{
+     @Html.ValidationSummary(true)
+     @Html.AntiForgeryToken() 
+    <fieldset>
+        <legend>Validation Form</legend>
+
+        <div>
+            @Html.LabelFor(model => model.ValInt1)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValInt1)
+            @Html.ValidationMessageFor(model => model.ValInt1)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.ValInt2)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValInt2)
+            @Html.ValidationMessageFor(model => model.ValInt2)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.ValString1)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValString1)
+            @Html.ValidationMessageFor(model => model.ValString1)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.ValString2)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValString2)
+            @Html.ValidationMessageFor(model => model.ValString2)
+        </div>
+    
+    
+        <div>
+            @Html.LabelFor(model => model.ValDouble1)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValDouble1)
+            @Html.ValidationMessageFor(model => model.ValDouble1)
+        </div>
+    
+        <div>
+            @Html.LabelFor(model => model.ValDouble2)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValDouble2)
+            @Html.ValidationMessageFor(model => model.ValDouble2)
+        </div>
+    
+        <div>
+            @Html.LabelFor(model => model.ValDateTime1)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValDateTime1)
+            @Html.ValidationMessageFor(model => model.ValDateTime1)
+        </div>
+    
+        <div>
+            @Html.LabelFor(model => model.ValDateTime2)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ValDateTime2)
+            @Html.ValidationMessageFor(model => model.ValDateTime2)
+        </div>
+    </fieldset>
+    <fieldset>
+        <div>  
+            @Html.EditorFor(model => model.SelectedApplicationStatus)
+            <select id="SelectedApplicationStatus" name="SelectedApplicationStatus" >
+                <option value="0">Pending</option>
+                <option value="1">Submitted</option>
+                <option value="2">Disapproved</option>
+                <option value="3">Approved</option>
+            </select>	
+        </div>
+        <div>
+            @Html.EditorFor(model => model.ApplicationSubmitted)
+            @Html.ValidationMessageFor(m => m.ApplicationSubmitted)
+        </div>
+    </fieldset>
+    <fieldset>
+        <p>
+            <input type="submit" value="SendToServer"  />
+        </p>
+    </fieldset>
+}
+   
+@section Scripts {
+     @Scripts.Render("~/bundles/jqueryval")
+}
