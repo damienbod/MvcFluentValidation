@@ -74,9 +74,9 @@
             @Html.ValidationMessageFor(model => model.ValDateTime2)
         </div>
     </fieldset>
+    
     <fieldset>
-        <div>  
-            @Html.EditorFor(model => model.SelectedApplicationStatus)
+        <div> 
             <select id="SelectedApplicationStatus" name="SelectedApplicationStatus" >
                 <option value="0">Pending</option>
                 <option value="1">Submitted</option>
@@ -89,6 +89,7 @@
             @Html.ValidationMessageFor(m => m.ApplicationSubmitted)
         </div>
     </fieldset>
+    
     <fieldset>
         <p>
             <input type="submit" value="SendToServer"  />
